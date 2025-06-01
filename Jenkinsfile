@@ -11,7 +11,8 @@ pipeline {
         stage('Git clone') {
             steps{
                 // Update the URL to your repo
-                git 'https://github.com/ualhmis2025-Mf-Hunters/sesion10.git'
+                git branch: 'main',
+                url: 'https://github.com/ualhmis2025-Mf-Hunters/sesion10.git'
             }
         }
         stage('Firefox tests') {
