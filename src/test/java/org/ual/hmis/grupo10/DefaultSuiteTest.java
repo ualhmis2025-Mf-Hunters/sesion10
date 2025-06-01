@@ -46,7 +46,7 @@ public class DefaultSuiteTest {
           break;
 
       case 1:  // Chrome
-          System.setProperty("webdriver.chrome.driver", "drivers/chromedriver-win64/chromedriver.exe");
+          //System.setProperty("webdriver.chrome.driver", "drivers/chromedriver-win64/chromedriver.exe");
           ChromeOptions chromeOptions = new ChromeOptions();
           if (headless) chromeOptions.addArguments("--headless=new");
           chromeOptions.addArguments("window-size=1920,1080");
