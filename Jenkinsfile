@@ -29,5 +29,19 @@ pipeline {
                 }
             }
         }
+        stage('Chrome tests') {
+            steps {
+                // Run Maven on xvfb environment display.
+                // Update the path/to/your/pom.xml as necessary
+                sh "xvfb-run mvn -f pom.xml clean test -Dwebdriver.chrome.driver=${DRIVERS_LOC}/chromedriver"
+            }
+            post {
+                // If Maven was able to run the tests, even if some of the test
+                // failed, record the test results
+                success {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                }
+            }
+        }
     }
 }
