@@ -39,14 +39,14 @@ public class DefaultSuiteTest {
 
       switch (browser) {
       case 0:  // Firefox
-          //System.setProperty("webdriver.gecko.driver", "drivers/geckodriver-v0.36.0-win64/geckodriver.exe");
+          System.setProperty("webdriver.gecko.driver", "drivers/geckodriver-v0.36.0-win64/geckodriver.exe");
           FirefoxOptions firefoxOptions = new FirefoxOptions();
           if (headless) firefoxOptions.addArguments("--headless");
           driver = new FirefoxDriver(firefoxOptions);
           break;
 
       case 1:  // Chrome
-          //System.setProperty("webdriver.chrome.driver", "drivers/chromedriver-win64/chromedriver.exe");
+          System.setProperty("webdriver.chrome.driver", "drivers/chromedriver-win64/chromedriver.exe");
           ChromeOptions chromeOptions = new ChromeOptions();
           if (headless) chromeOptions.addArguments("--headless=new");
           chromeOptions.addArguments("window-size=1920,1080");
